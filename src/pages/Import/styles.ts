@@ -6,6 +6,36 @@ export const Container = styled.div`
   max-width: 736px;
   margin: 0 auto;
   padding: 40px 20px;
+
+  .text-alert-1 {
+    display: none;
+  }
+  .teste-alert-2 {
+    display: flex;
+  }
+  @media (max-width: 500px) {
+    .text-alert-1 {
+      display: flex;
+      color: #a9a9a9;
+    }
+
+    .text-alert-2 {
+      display: none;
+    }
+    button {
+      background: #ff872c;
+      color: #fff;
+      width: 100%;
+      border-radius: 5px;
+      padding: 15px 80px;
+      border: 0;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background: ${shade(0.2, '#ff872c')};
+      }
+    }
+  }
 `;
 
 export const Title = styled.h1`
@@ -14,6 +44,14 @@ export const Title = styled.h1`
   line-height: 54px;
   color: #363f5f;
   text-align: center;
+
+  @media (max-width: 500px) {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 34px;
+    color: #363f5f;
+    text-align: left;
+  }
 `;
 
 export const ImportFileContainer = styled.section`
@@ -29,21 +67,20 @@ export const Footer = styled.section`
   align-items: center;
   justify-content: space-between;
 
-  p {
+  .text-alert-2 {
     display: flex;
-    align-items: center;
-    font-size: 12px;
-    line-height: 18px;
-    color: #969cb3;
-
-    img {
-      margin-right: 5px;
+    color: #a9a9a9;
+  }
+  @media (max-width: 500px) {
+    .text-alert-2 {
+      display: none;
     }
   }
 
   button {
     background: #ff872c;
     color: #fff;
+
     border-radius: 5px;
     padding: 15px 80px;
     border: 0;

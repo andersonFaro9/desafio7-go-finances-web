@@ -43,7 +43,7 @@ const Import: React.FC = () => {
       name: file.name,
       readableSize: filesize(file.size),
     }));
-
+    console.log(uploadFiles);
     setUploadedFiles(uploadFiles);
   }
 
@@ -51,16 +51,24 @@ const Import: React.FC = () => {
     <>
       <Header size="small" />
       <Container>
-        <Title>Importar uma transação</Title>
+        <Title>Importar uma transação </Title>
+
+        <p className="text-alert-1">
+          <img src={alert} alt="Alert" />
+          Permitido apenas arquivos CSV
+        </p>
+
         <ImportFileContainer>
           <Upload onUpload={submitFile} />
           {!!uploadedFiles.length && <FileList files={uploadedFiles} />}
 
           <Footer>
-            <p>
+            {/* text-alert-2 é para quando estiver em telas menores */}
+            <p className="text-alert-2">
               <img src={alert} alt="Alert" />
               Permitido apenas arquivos CSV
             </p>
+
             <button onClick={handleUpload} type="button">
               Enviar
             </button>
