@@ -21,6 +21,13 @@ export const CardContainer = styled.section`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 32px;
   margin-top: -150px;
+
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 12px;
+    margin-top: -50px;
+  }
 `;
 
 export const Card = styled.div`
@@ -57,7 +64,7 @@ export const TableContainer = styled.section`
     th {
       color: #969cb3;
       font-weight: normal;
-      padding: 20px 32px;
+      padding: 10px 32px;
       text-align: left;
       font-size: 16px;
       line-height: 24px;
